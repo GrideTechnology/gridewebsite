@@ -1,0 +1,4 @@
+- composer install
+- npm install
+- Make folder inside storage/license/domain_name.json
+- 

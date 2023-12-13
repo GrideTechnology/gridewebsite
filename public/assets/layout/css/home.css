@@ -1,0 +1,123 @@
+.ban_video i {
+    padding-top: 20%;
+    font-size: 70px;
+    color: #f26822;
+    width: 40px;
+    height: 40px;
+    line-height: 42px;
+    text-align: center;
+    border-radius: 20px;
+    animation: zoominoutsinglefeatured 1s infinite;
+    padding-left: 7px;
+}
+@keyframes  zoominoutsinglefeatured {
+    0%, 100% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.2,1.2);
+    }
+}
+/*partner-form*/
+.partner-form {
+    padding: 25px;
+}
+h5.field-title {
+    padding-bottom: 15px;
+}
+.partner-form .form-group label {
+    font-weight: 400 !important; 
+    margin-bottom: 3px !important;
+}
+.partner-form input[type=radio], .partner-form input[type=checkbox] {
+    margin-right: 5px;
+} 
+.padding-15 {
+    padding: 0 15px !important;
+}
+.text-red {
+    color: red;
+    font-size: 17px;
+    padding: 5px;
+}
+.form-icon{
+    padding-bottom: 5px;
+}
+.big-btn{
+    background: black!important;
+}
+.big-btn:hover{
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+}
+.service-section h3{
+    color: white !important;
+}
+header .dropdown-menu {
+    position: absolute; 
+    left: -15%;
+    padding: 10px 20px;
+    min-width: 12rem;
+    top: 210%!important;
+}
+#demo {
+    width: 100%;
+    padding: 150px 0px 100px 0px;
+    position: relative;
+    background: url(https://gridetech.com/assets/layout/images/bgimg2.jpg) no-repeat center center;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#demo::before {
+    height: 126px;
+}
+#demo::before {
+    content: '';
+    width: 100%;
+    height: 100px;
+    background: url(images/hq-wave.svg) no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    right: 0;
+    /* transform: rotate(180deg); */
+    /* display: none; */
+}
+#demo .overlay, #partner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f26822;
+    /* z-index: -99; */
+    opacity: .85;
+}
+.active-nav{
+    color: white !important;
+}
+.nav-tabs a{
+    color: black!important;
+}
+@media(max-width: 767px){
+    #demo .overlay {
+        background: rgba(242,104,34,0.8);
+        opacity: 1 !important;
+    }
+    section#demo {
+        background-size: cover !important;
+    }
+            #demo .overlay {
+            background: rgba(242,104,34,0.8);
+            opacity: 1 !important;
+        }
+        section#demo {
+            background-size: cover !important;
+            background-attachment: initial;
+        }
+        
+    }
+
+
+    
