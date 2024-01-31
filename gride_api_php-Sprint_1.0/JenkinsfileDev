@@ -1,0 +1,35 @@
+pipeline{
+	agent any
+	
+	stages{
+		stage('Config') {
+		  steps {
+			configFileProvider([configFile(fileId: '6705ad55-83b7-4219-bdfb-a1d985ce20d4', targetLocation: '.env')]) {	}
+			
+		  }
+		}
+		stage('Deploy PHP Applications'){
+			steps{
+				 sshPublisher(publishers: [sshPublisherDesc(configName: 'prodserver-135', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: ''' 
+				 docker exec 865c68e95f89 bash -c "cd var/www/html/gridetech_api;
+				 composer install;				 
+				 mkdir bootstrap/cache;	
+				 chown -R 1000:1000 bootstrap;
+				 chmod -R 0777 bootstrap;
+				 mkdir storage/framework;
+				 mkdir storage/framework/cache;
+				 mkdir storage/framework/sessions;
+				 mkdir storage/framework/views;
+				 chmod -R 0777 storage;
+				 "''',				 
+				  execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/php7.4/gridetech_api', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**/*, .env')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
+			}
+		}
+	}
+post {
+    always {
+      cleanWs()
+    }
+  }
+
+}
